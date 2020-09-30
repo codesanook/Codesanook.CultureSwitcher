@@ -1,2 +1,2 @@
-# Codesanook.LanguageSwitcher
-A language switcher for Orchard CMS
+# Codesanook.CultureSwitcher
+Add a culture switcher widget for Orchard CMS

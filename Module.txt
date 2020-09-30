@@ -1,0 +1,7 @@
+﻿Name: Codesanook.CulterSwitcher
+AntiForgery: enabled
+Author: Codesanook Team
+Website: https://www.codesanook.com
+Version: 1.0
+OrchardVersion: 1.10.3
+Description: Enable language switcher widget

@@ -10,8 +10,11 @@ namespace Codesanook.CultureSwitcher.Drivers {
 
         protected override DriverResult Display(CultureSwitcherPart part, string displayType, dynamic shapeHelper) {
             return ContentShape(
-                "Parts_UpcomingEvents",
-                () => shapeHelper.Parts_LanguageSwitcher(LanguageSwitch: part)
+                "Parts_CultureSwitcher",
+                () => shapeHelper.Parts_CultureSwitcher(
+                    CurrentCulture: part.CurrentCulture,
+                    SupportedCultures: part.SupportedCultures
+                )
             );
         }
     }

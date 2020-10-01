@@ -1,0 +1,5 @@
+<Placement>
+    <!-- https://docs.orchardproject.net/en/latest/Documentation/Understanding-placement-info/ -->
+    <!-- shape type -->
+    <Place Parts_CultureSwitcher="Content:1"/>
+</Placement>

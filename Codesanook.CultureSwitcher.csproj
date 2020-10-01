@@ -106,6 +106,8 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="packages.config" />
+    <Content Include="Placement.info" />
+    <None Include="Views\Parts\CultureSwitcher.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
@@ -129,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.md" />

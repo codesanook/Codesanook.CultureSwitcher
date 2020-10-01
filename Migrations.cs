@@ -22,7 +22,7 @@ namespace Codesanook.CultureSwitcher {
                 nameof(CultureSwitcherPart),
                 part => part
                     .Attachable()
-                    .WithDescription("Provide culture switcher part")
+                    .WithDescription("Provide culture/language switcher part")
             );
 
             const string widgetName = "CultureSwitcherWidget";
@@ -30,7 +30,7 @@ namespace Codesanook.CultureSwitcher {
             ContentDefinitionManager.AlterTypeDefinition(
                 widgetName,
                 type => type
-                    .WithPart(nameof(CultureSwitcher))
+                    .WithPart(nameof(CultureSwitcherPart))
                     .AsWidgetWithIdentity() // in Orchard.Widget assembly
             );
 

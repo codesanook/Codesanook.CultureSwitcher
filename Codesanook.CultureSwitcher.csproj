@@ -72,9 +72,6 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="React.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\React.Core.5.0.0\lib\net45\React.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -372,7 +369,6 @@
     <Content Include="packages.config" />
     <Content Include="Placement.info" />
     <Content Include="Content\Web.config" />
-    <None Include="Views\Parts\CultureSwitcher.cshtml" />
     <Content Include="Styles\codesanook-culture-switcher.css" />
     <Content Include="Web.config" />
     <Content Include="Styles\Web.config" />
@@ -398,7 +394,9 @@
       <Name>Orchard.Widgets</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Parts\CultureSwitcher.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="README.md" />
   </ItemGroup>

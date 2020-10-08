@@ -5,3 +5,4 @@ Website: https://www.codesanook.com
 Version: 1.0
 OrchardVersion: 1.10.3
 Description: Add culture/language switcher widget to Orchard CMS
+Dependencies: Orchard.Localization.CultureSelector

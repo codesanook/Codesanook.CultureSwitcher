@@ -1,12 +1,42 @@
-﻿@{
-
-    //Style.Include("codesanook-basic-user-profile.css");
-    Script.Require("React").AtHead();
-    Script.Require("ReactDOM").AtHead();
+﻿@using System.Globalization;
+@{
+    Style.Include("codesanook-culture-switcher.css").AtHead();
 }
 
+@functions {
+    const string flagIconsDir = "/Modules/Codesanook.CultureSwitcher/Content/flag-icons";
+    string GetFlagUrl(RegionInfo regionInfo)
+    {
+        return string.Format("{0}/{1}.png", flagIconsDir, regionInfo.TwoLetterISORegionName);
+    }
+}
 
-<ul>
-    <li> EN</li>
-    <li>TH </li>
-</ul>
+@*
+    RSCSS style
+    https://wplang.org/never-use-flags-language-selection/
+*@
+<div class="culture-switcher">
+    <div class="current">
+        @{
+            var currentCulture = new CultureInfo(Model.CurrentCulture);
+            var currentRegion = new RegionInfo(Model.CurrentCulture);
+        }
+        <img src="@GetFlagUrl(currentRegion)" alt="@Model.CurrentCulture" />
+        @Model.CurrentCulture
+        <i class="fa fa-caret-down"></i>
+    </div>
+    <ul class="culture-list">
+        @foreach (var culture in Model.SupportedCultures)
+        {
+            var cultureInfo = new CultureInfo(culture);
+            var regionInfo = new RegionInfo(culture);
+            <li class="item">
+                <a class="culture-item" href="@Url.Action("SetCulture", "CultureSwitcher", new { area = "Codesanook.CultureSwitcher", culture = culture })">
+                    <img src="@GetFlagUrl(regionInfo)" alt="@culture" />
+                    @cultureInfo.NativeName
+                    @culture
+                </a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,51 @@
+.culture-switcher {
+    position: relative;
+    margin: 0 10px;
+
+    > .current {
+        font-size: 14px;
+
+        &:hover {
+            cursor: default;
+        }
+    }
+
+    > .culture-list {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        z-index: 10;
+        display: none;
+    }
+
+    &:hover {
+        .culture-list {
+            display: block;
+        }
+    }
+}
+
+.culture-list {
+    padding: 0;
+    background-color: #FFF;
+    border: solid 1px #AAA;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: nowrap;
+
+    > .item {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.culture-item {
+    display: block;
+    padding: 5px 20px 5px 5px;
+
+    &:hover {
+        background-color: #CCC;
+        cursor: pointer;
+    }
+}

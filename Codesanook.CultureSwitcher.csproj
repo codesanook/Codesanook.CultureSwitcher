@@ -51,6 +51,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\JavaScriptEngineSwitcher.Core.3.1.0\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JSPool, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\JSPool.4.0.0\lib\net45\JSPool.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -60,11 +69,18 @@
       <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\React.Core.5.0.0\lib\net45\React.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -98,6 +114,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CultureSwitcherController.cs" />
     <Compile Include="Drivers\CultureSwitcherPartDriver.cs" />
     <Compile Include="Migrations.cs" />
     <Compile Include="Models\CultureSwitcherPart.cs" />
@@ -105,11 +122,259 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Content\flag-icons\ad.png" />
+    <Content Include="Content\flag-icons\ae.png" />
+    <Content Include="Content\flag-icons\af.png" />
+    <Content Include="Content\flag-icons\ag.png" />
+    <Content Include="Content\flag-icons\ai.png" />
+    <Content Include="Content\flag-icons\al.png" />
+    <Content Include="Content\flag-icons\am.png" />
+    <Content Include="Content\flag-icons\an.png" />
+    <Content Include="Content\flag-icons\ao.png" />
+    <Content Include="Content\flag-icons\ar.png" />
+    <Content Include="Content\flag-icons\as.png" />
+    <Content Include="Content\flag-icons\at.png" />
+    <Content Include="Content\flag-icons\au.png" />
+    <Content Include="Content\flag-icons\aw.png" />
+    <Content Include="Content\flag-icons\ax.png" />
+    <Content Include="Content\flag-icons\az.png" />
+    <Content Include="Content\flag-icons\ba.png" />
+    <Content Include="Content\flag-icons\bb.png" />
+    <Content Include="Content\flag-icons\bd.png" />
+    <Content Include="Content\flag-icons\be.png" />
+    <Content Include="Content\flag-icons\bf.png" />
+    <Content Include="Content\flag-icons\bg.png" />
+    <Content Include="Content\flag-icons\bh.png" />
+    <Content Include="Content\flag-icons\bi.png" />
+    <Content Include="Content\flag-icons\bj.png" />
+    <Content Include="Content\flag-icons\bm.png" />
+    <Content Include="Content\flag-icons\bn.png" />
+    <Content Include="Content\flag-icons\bo.png" />
+    <Content Include="Content\flag-icons\br.png" />
+    <Content Include="Content\flag-icons\bs.png" />
+    <Content Include="Content\flag-icons\bt.png" />
+    <Content Include="Content\flag-icons\bv.png" />
+    <Content Include="Content\flag-icons\bw.png" />
+    <Content Include="Content\flag-icons\by.png" />
+    <Content Include="Content\flag-icons\bz.png" />
+    <Content Include="Content\flag-icons\ca.png" />
+    <Content Include="Content\flag-icons\catalonia.png" />
+    <Content Include="Content\flag-icons\cc.png" />
+    <Content Include="Content\flag-icons\cd.png" />
+    <Content Include="Content\flag-icons\cf.png" />
+    <Content Include="Content\flag-icons\cg.png" />
+    <Content Include="Content\flag-icons\ch.png" />
+    <Content Include="Content\flag-icons\ci.png" />
+    <Content Include="Content\flag-icons\ck.png" />
+    <Content Include="Content\flag-icons\cl.png" />
+    <Content Include="Content\flag-icons\cm.png" />
+    <Content Include="Content\flag-icons\cn.png" />
+    <Content Include="Content\flag-icons\co.png" />
+    <Content Include="Content\flag-icons\cr.png" />
+    <Content Include="Content\flag-icons\cs.png" />
+    <Content Include="Content\flag-icons\cu.png" />
+    <Content Include="Content\flag-icons\cv.png" />
+    <Content Include="Content\flag-icons\cx.png" />
+    <Content Include="Content\flag-icons\cy.png" />
+    <Content Include="Content\flag-icons\cz.png" />
+    <Content Include="Content\flag-icons\de.png" />
+    <Content Include="Content\flag-icons\dj.png" />
+    <Content Include="Content\flag-icons\dk.png" />
+    <Content Include="Content\flag-icons\dm.png" />
+    <Content Include="Content\flag-icons\do.png" />
+    <Content Include="Content\flag-icons\dz.png" />
+    <Content Include="Content\flag-icons\ec.png" />
+    <Content Include="Content\flag-icons\ee.png" />
+    <Content Include="Content\flag-icons\eg.png" />
+    <Content Include="Content\flag-icons\eh.png" />
+    <Content Include="Content\flag-icons\england.png" />
+    <Content Include="Content\flag-icons\er.png" />
+    <Content Include="Content\flag-icons\es.png" />
+    <Content Include="Content\flag-icons\et.png" />
+    <Content Include="Content\flag-icons\europeanunion.png" />
+    <Content Include="Content\flag-icons\fam.png" />
+    <Content Include="Content\flag-icons\fi.png" />
+    <Content Include="Content\flag-icons\fj.png" />
+    <Content Include="Content\flag-icons\fk.png" />
+    <Content Include="Content\flag-icons\fm.png" />
+    <Content Include="Content\flag-icons\fo.png" />
+    <Content Include="Content\flag-icons\fr.png" />
+    <Content Include="Content\flag-icons\ga.png" />
+    <Content Include="Content\flag-icons\gb.png" />
+    <Content Include="Content\flag-icons\gd.png" />
+    <Content Include="Content\flag-icons\ge.png" />
+    <Content Include="Content\flag-icons\gf.png" />
+    <Content Include="Content\flag-icons\gh.png" />
+    <Content Include="Content\flag-icons\gi.png" />
+    <Content Include="Content\flag-icons\gl.png" />
+    <Content Include="Content\flag-icons\gm.png" />
+    <Content Include="Content\flag-icons\gn.png" />
+    <Content Include="Content\flag-icons\gp.png" />
+    <Content Include="Content\flag-icons\gq.png" />
+    <Content Include="Content\flag-icons\gr.png" />
+    <Content Include="Content\flag-icons\gs.png" />
+    <Content Include="Content\flag-icons\gt.png" />
+    <Content Include="Content\flag-icons\gu.png" />
+    <Content Include="Content\flag-icons\gw.png" />
+    <Content Include="Content\flag-icons\gy.png" />
+    <Content Include="Content\flag-icons\hk.png" />
+    <Content Include="Content\flag-icons\hm.png" />
+    <Content Include="Content\flag-icons\hn.png" />
+    <Content Include="Content\flag-icons\hr.png" />
+    <Content Include="Content\flag-icons\ht.png" />
+    <Content Include="Content\flag-icons\hu.png" />
+    <Content Include="Content\flag-icons\id.png" />
+    <Content Include="Content\flag-icons\ie.png" />
+    <Content Include="Content\flag-icons\il.png" />
+    <Content Include="Content\flag-icons\in.png" />
+    <Content Include="Content\flag-icons\io.png" />
+    <Content Include="Content\flag-icons\iq.png" />
+    <Content Include="Content\flag-icons\ir.png" />
+    <Content Include="Content\flag-icons\is.png" />
+    <Content Include="Content\flag-icons\it.png" />
+    <Content Include="Content\flag-icons\jm.png" />
+    <Content Include="Content\flag-icons\jo.png" />
+    <Content Include="Content\flag-icons\jp.png" />
+    <Content Include="Content\flag-icons\ke.png" />
+    <Content Include="Content\flag-icons\kg.png" />
+    <Content Include="Content\flag-icons\kh.png" />
+    <Content Include="Content\flag-icons\ki.png" />
+    <Content Include="Content\flag-icons\km.png" />
+    <Content Include="Content\flag-icons\kn.png" />
+    <Content Include="Content\flag-icons\kp.png" />
+    <Content Include="Content\flag-icons\kr.png" />
+    <Content Include="Content\flag-icons\kw.png" />
+    <Content Include="Content\flag-icons\ky.png" />
+    <Content Include="Content\flag-icons\kz.png" />
+    <Content Include="Content\flag-icons\la.png" />
+    <Content Include="Content\flag-icons\lb.png" />
+    <Content Include="Content\flag-icons\lc.png" />
+    <Content Include="Content\flag-icons\li.png" />
+    <Content Include="Content\flag-icons\lk.png" />
+    <Content Include="Content\flag-icons\lr.png" />
+    <Content Include="Content\flag-icons\ls.png" />
+    <Content Include="Content\flag-icons\lt.png" />
+    <Content Include="Content\flag-icons\lu.png" />
+    <Content Include="Content\flag-icons\lv.png" />
+    <Content Include="Content\flag-icons\ly.png" />
+    <Content Include="Content\flag-icons\ma.png" />
+    <Content Include="Content\flag-icons\mc.png" />
+    <Content Include="Content\flag-icons\md.png" />
+    <Content Include="Content\flag-icons\me.png" />
+    <Content Include="Content\flag-icons\mg.png" />
+    <Content Include="Content\flag-icons\mh.png" />
+    <Content Include="Content\flag-icons\mk.png" />
+    <Content Include="Content\flag-icons\ml.png" />
+    <Content Include="Content\flag-icons\mm.png" />
+    <Content Include="Content\flag-icons\mn.png" />
+    <Content Include="Content\flag-icons\mo.png" />
+    <Content Include="Content\flag-icons\mp.png" />
+    <Content Include="Content\flag-icons\mq.png" />
+    <Content Include="Content\flag-icons\mr.png" />
+    <Content Include="Content\flag-icons\ms.png" />
+    <Content Include="Content\flag-icons\mt.png" />
+    <Content Include="Content\flag-icons\mu.png" />
+    <Content Include="Content\flag-icons\mv.png" />
+    <Content Include="Content\flag-icons\mw.png" />
+    <Content Include="Content\flag-icons\mx.png" />
+    <Content Include="Content\flag-icons\my.png" />
+    <Content Include="Content\flag-icons\mz.png" />
+    <Content Include="Content\flag-icons\na.png" />
+    <Content Include="Content\flag-icons\nc.png" />
+    <Content Include="Content\flag-icons\ne.png" />
+    <Content Include="Content\flag-icons\nf.png" />
+    <Content Include="Content\flag-icons\ng.png" />
+    <Content Include="Content\flag-icons\ni.png" />
+    <Content Include="Content\flag-icons\nl.png" />
+    <Content Include="Content\flag-icons\no.png" />
+    <Content Include="Content\flag-icons\np.png" />
+    <Content Include="Content\flag-icons\nr.png" />
+    <Content Include="Content\flag-icons\nu.png" />
+    <Content Include="Content\flag-icons\nz.png" />
+    <Content Include="Content\flag-icons\om.png" />
+    <Content Include="Content\flag-icons\pa.png" />
+    <Content Include="Content\flag-icons\pe.png" />
+    <Content Include="Content\flag-icons\pf.png" />
+    <Content Include="Content\flag-icons\pg.png" />
+    <Content Include="Content\flag-icons\ph.png" />
+    <Content Include="Content\flag-icons\pk.png" />
+    <Content Include="Content\flag-icons\pl.png" />
+    <Content Include="Content\flag-icons\pm.png" />
+    <Content Include="Content\flag-icons\pn.png" />
+    <Content Include="Content\flag-icons\pr.png" />
+    <Content Include="Content\flag-icons\ps.png" />
+    <Content Include="Content\flag-icons\pt.png" />
+    <Content Include="Content\flag-icons\pw.png" />
+    <Content Include="Content\flag-icons\py.png" />
+    <Content Include="Content\flag-icons\qa.png" />
+    <Content Include="Content\flag-icons\re.png" />
+    <Content Include="Content\flag-icons\ro.png" />
+    <Content Include="Content\flag-icons\rs.png" />
+    <Content Include="Content\flag-icons\ru.png" />
+    <Content Include="Content\flag-icons\rw.png" />
+    <Content Include="Content\flag-icons\sa.png" />
+    <Content Include="Content\flag-icons\sb.png" />
+    <Content Include="Content\flag-icons\sc.png" />
+    <Content Include="Content\flag-icons\scotland.png" />
+    <Content Include="Content\flag-icons\sd.png" />
+    <Content Include="Content\flag-icons\se.png" />
+    <Content Include="Content\flag-icons\sg.png" />
+    <Content Include="Content\flag-icons\sh.png" />
+    <Content Include="Content\flag-icons\si.png" />
+    <Content Include="Content\flag-icons\sj.png" />
+    <Content Include="Content\flag-icons\sk.png" />
+    <Content Include="Content\flag-icons\sl.png" />
+    <Content Include="Content\flag-icons\sm.png" />
+    <Content Include="Content\flag-icons\sn.png" />
+    <Content Include="Content\flag-icons\so.png" />
+    <Content Include="Content\flag-icons\sr.png" />
+    <Content Include="Content\flag-icons\st.png" />
+    <Content Include="Content\flag-icons\sv.png" />
+    <Content Include="Content\flag-icons\sy.png" />
+    <Content Include="Content\flag-icons\sz.png" />
+    <Content Include="Content\flag-icons\tc.png" />
+    <Content Include="Content\flag-icons\td.png" />
+    <Content Include="Content\flag-icons\tf.png" />
+    <Content Include="Content\flag-icons\tg.png" />
+    <Content Include="Content\flag-icons\th.png" />
+    <Content Include="Content\flag-icons\tj.png" />
+    <Content Include="Content\flag-icons\tk.png" />
+    <Content Include="Content\flag-icons\tl.png" />
+    <Content Include="Content\flag-icons\tm.png" />
+    <Content Include="Content\flag-icons\tn.png" />
+    <Content Include="Content\flag-icons\to.png" />
+    <Content Include="Content\flag-icons\tr.png" />
+    <Content Include="Content\flag-icons\tt.png" />
+    <Content Include="Content\flag-icons\tv.png" />
+    <Content Include="Content\flag-icons\tw.png" />
+    <Content Include="Content\flag-icons\tz.png" />
+    <Content Include="Content\flag-icons\ua.png" />
+    <Content Include="Content\flag-icons\ug.png" />
+    <Content Include="Content\flag-icons\um.png" />
+    <Content Include="Content\flag-icons\us.png" />
+    <Content Include="Content\flag-icons\uy.png" />
+    <Content Include="Content\flag-icons\uz.png" />
+    <Content Include="Content\flag-icons\va.png" />
+    <Content Include="Content\flag-icons\vc.png" />
+    <Content Include="Content\flag-icons\ve.png" />
+    <Content Include="Content\flag-icons\vg.png" />
+    <Content Include="Content\flag-icons\vi.png" />
+    <Content Include="Content\flag-icons\vn.png" />
+    <Content Include="Content\flag-icons\vu.png" />
+    <Content Include="Content\flag-icons\wales.png" />
+    <Content Include="Content\flag-icons\wf.png" />
+    <Content Include="Content\flag-icons\ws.png" />
+    <Content Include="Content\flag-icons\ye.png" />
+    <Content Include="Content\flag-icons\yt.png" />
+    <Content Include="Content\flag-icons\za.png" />
+    <Content Include="Content\flag-icons\zm.png" />
+    <Content Include="Content\flag-icons\zw.png" />
     <Content Include="packages.config" />
     <Content Include="Placement.info" />
+    <Content Include="Content\Web.config" />
     <None Include="Views\Parts\CultureSwitcher.cshtml" />
+    <Content Include="Styles\codesanook-culture-switcher.css" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
     <Content Include="Module.txt" />
   </ItemGroup>
@@ -124,14 +389,16 @@
       <Name>Orchard.Core</Name>
       <Private>$(MvcBuildViews)</Private>
     </ProjectReference>
+    <ProjectReference Include="..\Orchard.Localization\Orchard.Localization.csproj">
+      <Project>{fbc8b571-ed50-49d8-8d9d-64ab7454a0d6}</Project>
+      <Name>Orchard.Localization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Orchard.Widgets\Orchard.Widgets.csproj">
       <Project>{194d3ccc-1153-474d-8176-fde8d7d0d0bd}</Project>
       <Name>Orchard.Widgets</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="README.md" />
   </ItemGroup>
